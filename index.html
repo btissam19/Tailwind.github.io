@@ -22,21 +22,33 @@
 </head>
 <body>
   <!--start navbar-->
-  <nav class="container">
-    <div class="flex items-center justify-between">
+  <nav class="container ">
+    <div class="flex items-center justify-between ">
       <div class="logo"><img src="images/logo-light (1).png" alt="tailwind logo" width="200px">
       </div>
       <!--for make navbar large we add padding not width-->
-      <div class=" hidden md:flex space-x-6 items-center">
+      <div class=" hidden md:flex space-x-6 items-center ">
       <a href="#" class=" hover:text-orange-600">Portfolio</a>
       <a href="#" class=" hover:text-orange-600">About</a>
       <a href="#" class=" hover:text-orange-600">Contact</a>
       <a href="#"class=" hover:text-orange-600">Social</a>
-      <a href="#" class="rounded-full px-6 py-2 bg-orange-500 text-slate-50  hover:bg-slate-900  hover:text-slate-50">Call Me</a>
+      <a href="#" class="rounded-full px-6 py-2 bg-orange-500 text-slate-50  hover:bg-slate-900 
+       hover:text-slate-50">
+        Call Me</a>
     </div>
-    <button class="md:hidden">
+    <button class="md:hidden" id="mobile-btn">
       <i class="ri-menu-line text-2xl"></i>
     </button>
+    </div>
+    <div class="md:hidden">
+      <div id="mobile-menu" class=" absolute flex flex-col items-center space-y-4 bg-gray-50 py-8 left-6 right-6">
+
+        <a href="#" class=" hover:text-orange-600">Portfolio</a>
+        <a href="#" class=" hover:text-orange-600">About</a>
+        <a href="#" class=" hover:text-orange-600">Contact</a>
+        <a href="#"class=" hover:text-orange-600">Social</a>
+        <a href="#" class="rounded-full px-6 py-2 bg-orange-500 text-slate-50  hover:bg-slate-900  hover:text-slate-50">Call Me</a>
+      </div>
     </div>
   </nav>
   <!--end navbar-->
@@ -164,7 +176,12 @@
 
 
 
-
+<script>
+  const mobileBtn=document.querySelector("#mobile-btn")
+  const mobileMenu=document.querySelector("#mobile-menu")
+  mobileBtn.addEventListener('click',()=>{
+    mobileMenu.classList.toggle('hidden');});
+</script>
 
 <!--end  footor-->
 </body>
